@@ -14,11 +14,35 @@
     <title>{{title}}</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <div class="container-fluid" id="container">
+        <a class="navbar-brand">
+          <h1>News App</h1>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="/">Home</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      {% for each in articles %}
-      <img class="img-thumbnail" src="{{ each['urlToImage']}}" alt="" />
-      <span>{{each['description'] }}</span>
-      {% endfor %}
+      <div class="row">
+        <div class="col-6">
+          {% for each in articles %}
+          <span class="text-center"><b>{{each['author']}}</b></span>
+          
+          
+        </div>
+        <div class="col-6">
+          <img class="img-thumbnail" src="{{ each['urlToImage']}}" alt="" />
+          
+          <span>{{each['description'] }}</span>
+          <span><b>Published on:{{each['publishedAt'] }}</b></span>
+          <a href="{{each['url']}}">Read more</a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </body>
 </html>
