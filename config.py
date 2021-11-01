@@ -1,4 +1,4 @@
-import os
+import os #i import this so that i can get my api key from the venv environment. Now request.py gets it from importing Config
 
 class Config:
     ''''''
